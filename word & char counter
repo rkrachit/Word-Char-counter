@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css"/>
+
+    <style>
+      * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: rgb(51, 43, 43);
+}
+
+.container {
+  display: block;
+  margin: 0 auto;
+  width: 30%;
+  margin-top: 10%;
+}
+
+.bottom {
+  display: flex;
+}
+
+.heading {
+  background-color:orange;
+  border-radius: 5px;
+  padding: 5px;
+  text-align: center;
+}
+
+p {
+  background-color: green;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+}
+
+span{
+  background-color:green ;
+}
+
+
+#textarea{
+  font-size: 20px;
+  
+}
+    </style>
+
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">WORD & CHARACTER COUNTER</div>
+      <textarea name="para" id="textarea" cols="35" rows="10"></textarea>
+      <p>
+        <span id="word"></span>Words And <span id="characters"></span>Characters
+      </p>
+    </div>
+  <script>
+    var x= document.getElementById("textarea");
+x.addEventListener('input',function()
+{
+var a = this.value;
+var b= a.trim();
+var c= b.length;
+document.getElementById('characters').innerHTML=c;
+
+
+var d= b.split(" ");
+var e= d.filter(function(f){
+    return f !="";
+});
+document.getElementById("word").innerHTML=e.length;
+}
+)
+  </script>
+  </body>
+</html>
